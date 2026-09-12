@@ -1,0 +1,142 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 TOP Information スタイル
+ * URL: /src/components/top/TopInformation.module.scss
+ * Referenced in: /src/components/top/TopInformation.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.topInformation {
+    width: min(108.8rem, calc(100% - 4rem));
+    margin: 0 auto;
+    padding-bottom: 12rem;
+    color: $main-sub-black;
+    font-size: inherit;
+    .sectionTitle {
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+        font-size: inherit;
+        &::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #aaa;
+        }
+        h2 {
+            @include eb-garamond;
+            flex-shrink: 0;
+            font-size: fz(32);
+            font-weight: 400;
+            line-height: 1;
+        }
+    }
+    .introduction {
+        margin-top: 2.4rem;
+        font-size: fz(16);
+        line-height: 1.8;
+    }
+    .informationGroup {
+        margin-top: 4.8rem;
+        font-size: inherit;
+        h3 {
+            @include eb-garamond;
+            font-size: fz(24);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        dl {
+            width: 100%;
+            margin-top: 1.6rem;
+            overflow: hidden;
+            border-radius: 0.4rem;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            & > div {
+                background-color: $pure-white;
+                display: grid;
+                font-size: inherit;
+                grid-column: span 2;
+                grid-template-columns: subgrid;
+                padding-block: 2rem;
+                gap: 0 8rem;
+                border-bottom: 1px solid #cbcbcb;
+                &:first-of-type {
+                    border-top: 1px solid #cbcbcb;
+                    border-radius: 8px 8px 0 0;
+                }
+                &:last-of-type {
+                    border-radius: 0 0 8px 8px;
+                }
+                dt {
+                    color: $main-light-black;
+                    font-size: fz(14);
+                    font-weight: 400;
+                    line-height: 1.6;
+                    text-transform: uppercase;
+                    padding-left: 2.4rem;
+                }
+                dd {
+                    line-height: 1.7;
+                    font-size: inherit;
+                    color: $main-sub-black;
+                    p {
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+                    a {
+                        color: inherit;
+                        font-size: inherit;
+                        line-height: inherit;
+                        text-decoration: underline;
+                        text-underline-offset: 0.2em;
+                    }
+                    .paymentCards,
+                    .atmCards {
+                        display: block;
+                        height: auto;
+                        margin-top: 0.8rem;
+                    }
+                    .paymentCards {
+                        width: 10.3rem;
+                    }
+                    .atmCards {
+                        width: 26rem;
+                    }
+                    .atmAddress {
+                        margin-top: 0.8rem;
+                        color: $main-light-black;
+                        font-size: fz(10);
+                        font-style: normal;
+                        line-height: 1.6;
+                    }
+                    .mapLink {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        width: fit-content;
+                        min-width: 16rem;
+                        height: 4.4rem;
+                        margin-top: 0.8rem;
+                        padding: 0 3rem 0 1.2rem;
+                        border: 1px solid rgb(76 63 87 / 28%);
+                        border-radius: 0.3rem;
+                        color: $main-dark-purple;
+                        font-size: fz(14);
+                        text-decoration: none;
+                        &::after {
+                            @include svg-arrow-link('4C3F57');
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            right: 1.2rem;
+                            width: 0.9rem;
+                            translate: 0 -50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

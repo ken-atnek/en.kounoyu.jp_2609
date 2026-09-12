@@ -1,0 +1,63 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 TOP Reservation スタイル
+ * URL: /src/components/top/TopReservation.module.scss
+ * Referenced in: /src/components/top/TopReservation.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.topReservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem 2rem 7.2rem;
+    color: $pure-white;
+    text-align: center;
+    background-color: $main-dark-purple;
+    h2 {
+        @include eb-garamond;
+        font-size: fz(32);
+        font-weight: 400;
+        line-height: 1.2;
+    }
+    .description {
+        margin-top: 1.6rem;
+        font-size: fz(16);
+        line-height: 1.6;
+    }
+    .bookingLink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24rem;
+        min-height: 5.2rem;
+        margin-top: 2.4rem;
+        border-radius: 0.8rem;
+        color: $main-dark-purple;
+        font-size: fz(16);
+        line-height: 1;
+        text-transform: uppercase;
+        background-color: $pure-white;
+        transition:
+            color 0.2s ease-out,
+            background-color 0.2s ease-out;
+        @include hover {
+            color: $pure-white;
+            background-color: $main-sub-black;
+        }
+    }
+    .telephone {
+        display: flex;
+        align-items: baseline;
+        gap: 0.8rem;
+        margin-top: 2rem;
+        font-size: inherit;
+        line-height: 1.4;
+        a {
+            font-size: fz(20);
+        }
+        span {
+            font-size: fz(16);
+        }
+    }
+}

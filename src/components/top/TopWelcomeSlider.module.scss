@@ -1,0 +1,81 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 TOP Welcome スライダースタイル
+ * URL: /src/components/top/TopWelcomeSlider.module.scss
+ * Referenced in: /src/components/top/TopWelcomeSlider.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.topWelcomeSlider {
+    overflow: hidden;
+    padding: 12rem 0 11rem;
+    h2 {
+        @include eb-garamond;
+        font-size: fz(28);
+        font-weight: 400;
+        text-align: center;
+    }
+    /* stylelint-disable selector-pseudo-class-no-unknown, selector-class-pattern */
+    :global(.splide) {
+        margin-top: 5.8rem;
+    }
+    :global(.splide__track) {
+        overflow: hidden;
+    }
+    :global(.splide__arrows) {
+        position: absolute;
+        top: -6.2rem;
+        right: 12.4rem;
+        display: flex;
+        gap: 0 1.2rem;
+    }
+    button:global(.splide__arrow) {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: $pure-white;
+        opacity: 1;
+        transform: none;
+        svg {
+            display: none;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 0.8rem;
+            @include svg-arrow-slide('6B6B6B');
+        }
+        &:global(.splide__arrow--prev)::after {
+            transform: scaleX(-1);
+        }
+    }
+    /* stylelint-enable selector-pseudo-class-no-unknown, selector-class-pattern */
+    .slideItem {
+        width: 32.8rem;
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+        h3 {
+            @include eb-garamond;
+            margin-top: 1.8rem;
+            font-size: 2.4rem;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        p {
+            margin-top: 1.8rem;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: $main-sub-black;
+            text-align: justify;
+        }
+    }
+}

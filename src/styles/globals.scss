@@ -24,7 +24,15 @@ body {
     justify-content: space-between;
     width: 100%;
     color: $main-normal-black;
-    background-color: $normal-off-white;
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: $normal-off-white url('/images/common/bg-white.webp') repeat;
+    }
     @include tbw {
         overflow-x: clip;
     }
@@ -35,7 +43,6 @@ body {
         font-size: 3.6vw;
     }
 }
-
 main {
     font-size: inherit;
     flex: 1;

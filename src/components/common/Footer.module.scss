@@ -1,0 +1,204 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 Footer スタイル
+ * URL: /src/components/common/Footer.module.scss
+ * Referenced in: /src/components/common/Footer.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 38.4rem;
+    padding: 7.2rem 7.2rem 3.2rem;
+    color: $pure-white;
+    background-color: $main-normal-black;
+    .footerMain {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 0 5.2rem;
+        font-size: inherit;
+        .ryokanDetails {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 1.2rem;
+                width: fit-content;
+                .logoJa,
+                .logoEn {
+                    display: block;
+                    font-size: inherit;
+                    svg {
+                        display: block;
+                        fill: $pure-white;
+                    }
+                }
+                .logoJa {
+                    width: 11.8rem;
+                    svg {
+                        aspect-ratio: 176 / 76;
+                    }
+                }
+                .logoEn {
+                    width: 10rem;
+                    padding-top: 0.8rem;
+                    svg {
+                        aspect-ratio: 126 / 50;
+                    }
+                }
+            }
+            .address {
+                margin-top: 2rem;
+                font-size: fz(14);
+                font-style: normal;
+                line-height: 1.7;
+                p,
+                a {
+                    color: inherit;
+                    font-size: inherit;
+                    line-height: inherit;
+                }
+            }
+            .socialLinks {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+                margin-top: 1.6rem;
+                a {
+                    display: block;
+                    width: 1.8rem;
+                    color: inherit;
+                    transition: opacity 0.2s ease-out;
+                    @include hover {
+                        opacity: 0.65;
+                    }
+                }
+                svg {
+                    display: block;
+                    aspect-ratio: 1;
+                    fill: $pure-white;
+                }
+            }
+        }
+        .footerNavigation {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding-top: 0.8rem;
+            font-size: inherit;
+            margin-left: auto;
+            a {
+                color: inherit;
+                font-size: fz(14);
+                line-height: 1.2;
+                text-transform: uppercase;
+                transition: opacity 0.2s ease-out;
+                @include hover {
+                    opacity: 0.65;
+                }
+            }
+        }
+        .sisterRyokan {
+            max-width: 35rem;
+            padding: 2.4rem 1.8rem;
+            border-radius: 0.8rem;
+            background-color: #547347;
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            gap: 0.6rem 0;
+            .sisterLabel {
+                font-size: fz(12);
+                line-height: 1;
+                text-transform: uppercase;
+            }
+            h2 {
+                @include eb-garamond;
+                font-size: fz(28);
+                font-weight: 400;
+                line-height: 1;
+                color: $pure-white;
+            }
+            .sisterDescription {
+                font-size: fz(14);
+                line-height: 1.4;
+            }
+            .sisterLink {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18rem;
+                min-height: 3.4rem;
+                margin: 1.6rem 0 0 auto;
+                padding: 0 2.8rem 0 1.6rem;
+                border-radius: 0.8rem;
+                color: #547347;
+                font-size: fz(12);
+                line-height: 1;
+                text-transform: uppercase;
+                background-color: $pure-white;
+                transition:
+                    color 0.2s ease-out,
+                    background-color 0.2s ease-out;
+                &::after {
+                    @include svg-arrow-link('547347');
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 1.6rem;
+                    width: 0.9rem;
+                    translate: 0 -50%;
+                }
+                @include hover {
+                    color: $pure-white;
+                    background-color: $main-normal-black;
+                    &::after {
+                        @include svg-arrow-link('FFFFFF');
+                    }
+                }
+            }
+        }
+    }
+    .footerBottom {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-top: auto;
+        font-size: inherit;
+        small {
+            color: #6b6b6b;
+            font-size: fz(12);
+            line-height: 1;
+            @include eb-garamond;
+        }
+        .backToTop {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            display: block;
+            width: 3.2rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: $pure-white;
+            transition: opacity 0.2s ease-out;
+            &::after {
+                @include svg-arrow-slide('1C1C1C');
+                content: '';
+                position: absolute;
+                inset: 0;
+                width: 0.8rem;
+                margin: auto;
+                rotate: -90deg;
+            }
+            @include hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}

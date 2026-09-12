@@ -1,0 +1,215 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 TOP Your Stay スタイル
+ * URL: /src/components/top/TopStay.module.scss
+ * Referenced in: /src/components/top/TopStay.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.topStay {
+    padding-bottom: 12rem;
+    color: $main-sub-black;
+    .sectionHeader {
+        @include section-header;
+        .sectionTitle {
+            z-index: 2;
+        }
+    }
+    .propertyMap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(104rem, calc(100% - 4rem));
+        margin: 7.2rem auto 0;
+        font-size: inherit;
+        h3 {
+            @include eb-garamond;
+            font-size: fz(32);
+            font-weight: 400;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: 3.2rem;
+        }
+    }
+    .introduction {
+        @include eb-garamond;
+        width: min(92rem, calc(100% - 4rem));
+        margin: 5.6rem auto 0;
+        font-size: fz(24);
+        line-height: 1.4;
+        text-align: center;
+    }
+    .stayGuide {
+        width: min(112rem, calc(100% - 4rem));
+        margin: 7.2rem auto 11.2rem;
+        font-size: inherit;
+        .stayGuideTitle {
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+            font-size: inherit;
+            &::after {
+                content: '';
+                flex: 1;
+                height: 1px;
+                background-color: #aaa;
+            }
+            h3 {
+                flex-shrink: 0;
+                font-size: fz(14);
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+        .stayGuideList {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: auto auto 1fr;
+            gap: 0 4.8rem;
+            margin-top: 4.8rem;
+            font-size: inherit;
+            .stayGuideItem {
+                min-width: 0;
+                font-size: inherit;
+                grid-row: span 3;
+                display: grid;
+                grid-template-rows: subgrid;
+                gap: 3.2rem 0;
+                .stayGuideHeading {
+                    font-size: inherit;
+                    h4 {
+                        @include eb-garamond;
+                        font-size: fz(26);
+                        font-weight: 400;
+                        line-height: 1.2;
+                    }
+                }
+                > img {
+                    display: block;
+                    width: 100%;
+                    aspect-ratio: 52 / 38;
+                    object-fit: cover;
+                }
+                .stayGuideText {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                    font-size: inherit;
+                    .stayGuideDescription,
+                    .price {
+                        font-size: fz(16);
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+    }
+    .nearby {
+        width: min(112rem, calc(100% - 4rem));
+        margin: 0 auto;
+        font-size: inherit;
+        > h3 {
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+            font-size: fz(14);
+            font-weight: 400;
+            line-height: 1;
+            &::after {
+                content: '';
+                flex: 1;
+                height: 1px;
+                background-color: #aaa;
+            }
+        }
+        .nearbyList {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem 0;
+            margin-top: 3.2rem;
+            font-size: inherit;
+            .nearbyItem {
+                display: grid;
+                grid-template-columns: 42.6rem minmax(0, 1fr);
+                gap: 0 4.8rem;
+                align-items: start;
+                font-size: inherit;
+                > img {
+                    display: block;
+                    width: 100%;
+                    aspect-ratio: 426 / 300;
+                    object-fit: cover;
+                }
+                .nearbyContent {
+                    min-width: 0;
+                    font-size: inherit;
+                    h4 {
+                        @include eb-garamond;
+                        padding-bottom: 1.6rem;
+                        border-bottom: solid 1px #cbcbcb;
+                        font-size: fz(32);
+                        font-weight: 400;
+                        line-height: 1.1;
+                        color: $pure-black;
+                    }
+                    .travelTime {
+                        position: relative;
+                        margin-top: 1.6rem;
+                        padding-left: 4rem;
+                        font-size: fz(18);
+                        line-height: 2.4rem;
+                        &::before {
+                            @include svg-icon-car('3A3A3A');
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: 2.8rem;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .nearbyDescription {
+                        margin-top: 1.2rem;
+                        font-size: fz(16);
+                        line-height: 1.6;
+                    }
+                    .linkList {
+                        display: flex;
+                        gap: 1.6rem;
+                        margin-top: 2.4rem;
+                        font-size: inherit;
+                        .linkButton {
+                            display: flex;
+                            align-items: center;
+                            width: 16rem;
+                            height: 4.4rem;
+                            padding: 0 1.6rem;
+                            border: solid 1px #aaa;
+                            border-radius: 0.4rem;
+                            font-size: inherit;
+                            span {
+                                position: relative;
+                                display: block;
+                                width: 100%;
+                                font-size: fz(14);
+                                line-height: 1;
+                                &::after {
+                                    @include svg-arrow-link('3A3A3A');
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 0;
+                                    width: 0.8rem;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -179,8 +179,10 @@ src/components/common/
 src/components/top/
 ├── TopHero.tsx
 ├── TopHero.module.scss
-├── TopIntroduction.tsx
-├── TopIntroduction.module.scss
+├── TopIntro.tsx
+├── TopIntro.module.scss
+├── TopWelcomeSlider.tsx
+├── TopWelcomeSlider.module.scss
 ├── TopRooms.tsx
 ├── TopRooms.module.scss
 ├── TopOnsen.tsx
@@ -190,7 +192,11 @@ src/components/top/
 ├── TopStay.tsx
 ├── TopStay.module.scss
 ├── TopAccess.tsx
-└── TopAccess.module.scss
+├── TopAccess.module.scss
+├── TopInformation.tsx
+├── TopInformation.module.scss
+├── TopReservation.tsx
+└── TopReservation.module.scss
 ```
 
 コンポーネント名と分割単位は実装開始時に既存構成を確認して確定します。デザイン内の小要素を、最初から細かくComponent化しすぎません。

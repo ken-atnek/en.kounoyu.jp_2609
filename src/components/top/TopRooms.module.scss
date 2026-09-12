@@ -1,0 +1,192 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 TOP Rooms スタイル
+ * URL: /src/components/top/TopRooms.module.scss
+ * Referenced in: /src/components/top/TopRooms.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.topRooms {
+    padding-bottom: 12rem;
+    .sectionHeader {
+        @include section-header;
+    }
+    .introduction {
+        @include eb-garamond;
+        margin: 7.2rem auto 9.8rem;
+        font-size: fz(24);
+        line-height: 1.6;
+        text-align: center;
+        color: $main-sub-black;
+    }
+    .roomList {
+        width: min(108.8rem, calc(100% - 4rem));
+        margin: 0 auto;
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 9.6rem;
+        article {
+            // border: solid 1px #0000ff;
+            .roomHeading {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem 0;
+                p {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.8rem;
+                    margin: 0;
+                    color: $main-light-black;
+                    font-size: fz(14);
+                    line-height: 1;
+                    &::after {
+                        content: '';
+                        flex: 1;
+                        border-top: 1px solid #cbcbcb;
+                    }
+                }
+                h3 {
+                    @include eb-garamond;
+                    font-size: fz(32);
+                    font-weight: 400;
+                }
+            }
+            .variantList {
+                margin-top: 4.6rem;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 4.8rem;
+                .roomVariant {
+                    font-size: inherit;
+                    .variantTitle {
+                        display: flex;
+                        align-items: center;
+                        gap: 1.6rem;
+                        margin: 0 0 2.4rem;
+                        font-size: fz(14);
+                        font-weight: 400;
+                        line-height: 1.4;
+                        &::before {
+                            content: '';
+                            width: 3.2rem;
+                            border-top: 1px solid $main-light-black;
+                        }
+                    }
+                    .mediaGrid {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 4.8rem;
+                        font-size: inherit;
+                        .carousel {
+                            min-width: 0;
+                            /* stylelint-disable selector-pseudo-class-no-unknown, selector-class-pattern */
+                            :global(.splide) {
+                                position: relative;
+                            }
+                            :global(.splide__track) {
+                                overflow: hidden;
+                            }
+                            :global(.splide__pagination) {
+                                right: 0.8rem;
+                                bottom: -2.3rem;
+                                left: auto;
+                                justify-content: flex-end;
+                                gap: 0 0.9rem;
+                                width: auto;
+                                padding: 0;
+                            }
+                            button:global(.splide__pagination__page) {
+                                width: 0.9rem;
+                                height: 0.9rem;
+                                margin: 0;
+                                border: 1px solid #a5a5a5;
+                                background-color: transparent;
+                                opacity: 1;
+                                transform: none;
+                                &:global(.is-active) {
+                                    border-color: $main-dark-purple;
+                                    background-color: $main-dark-purple;
+                                    transform: scale(1.3);
+                                }
+                            }
+                            /* stylelint-enable selector-pseudo-class-no-unknown, selector-class-pattern */
+                            .slideItem {
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    aspect-ratio: 3 / 2;
+                                    object-fit: cover;
+                                }
+                            }
+                            .mediaCaption {
+                                margin: 0.9rem 0 0;
+                                color: $main-light-black;
+                                font-size: 1.4rem;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .roomDetails {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 5.2rem;
+                align-items: start;
+                margin: 5.6rem 4.8rem 0;
+                font-size: inherit;
+                .floorPlans {
+                    display: flex;
+                    gap: 2.4rem;
+                    img {
+                        display: block;
+                        width: 17.6rem;
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }
+                .roomDescription {
+                    padding-top: 0.4rem;
+                    font-size: inherit;
+                    > p {
+                        margin: 0;
+                        font-size: fz(16);
+                        color: $main-sub-black;
+                        line-height: 1.6;
+                    }
+                    dl {
+                        display: grid;
+                        gap: 0.7rem;
+                        margin: 2.4rem 0 0;
+                        font-size: inherit;
+                        div {
+                            margin: 0;
+                            font-size: inherit;
+                            dt {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.7rem;
+                                font-size: fz(14);
+                                line-height: 1.4;
+                                &::before {
+                                    content: '';
+                                    width: 0.8rem;
+                                    aspect-ratio: 1;
+                                    background-color: $main-sub-black;
+                                }
+                            }
+                            dd {
+                                margin: 0.2rem 0 0;
+                                font-size: fz(14);
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
