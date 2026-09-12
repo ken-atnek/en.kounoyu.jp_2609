@@ -11,15 +11,18 @@ React / Next.jsとSass / CSSの一般的な規約は、共通プレイブック�
 - ComponentのTSXと `*.module.scss` は同じディレクトリへ置く
 - 全ページ共通の出力だけを `src/styles/globals.scss` へ置く
 - 変数、mixin、functionなどCSSを直接出力しない定義は `src/styles/foundation/` へまとめる
-- SCSS / TSXへのCreated・Last updatedヘッダーは必須にしない
+- SCSSのインデントはスペース4で統一する
+- SCSSのブロック内とルール間に自動の空白行を入れない
+- TSXは `docs/rules/tsx-comment-rules.md`、SCSSは `docs/rules/scss-comment-rules.md` に従いコメントヘッダーを記載する
 
 foundationの実際のファイル構成は、デザイントークンとフォントが確定してから決めます。
 
 ## Component
 
 - HeaderとFooterは `src/components/common/` に配置する
-- LP固有セクションは `src/components/english/` に配置する
-- LP固有Componentは `EnglishHero`、`EnglishRooms`のように用途が分かる名前にする
+- LP固有セクションは `src/components/top/` に配置する
+- プロジェクト全体が英語サイトのため、ディレクトリ名やComponent名に `english` / `English` を重複して付けない
+- LP固有Componentは `TopHero`、`TopRooms`のように用途が分かる名前にする
 - `page.tsx` はセクションを並べる役割に留める
 - デザイン内の小要素を、最初から細かく分割しすぎない
 
@@ -37,16 +40,18 @@ foundationの実際のファイル構成は、デザイントークンとフォ�
 
 - 現在の正式な参照デザインはPC版のみ
 - PCデザインの実装難易度を理由に構成を簡略化しない
-- 固定幅や固定高さだけに依存せず、SPでも破綻しにくい構造にする
-- SP固有の情報順、ナビゲーション、余白、文字サイズは確認後に確定する
-- ブレイクポイントはSass / CSS共通プレイブックに従い、表示が破綻する幅を基準にする
+- 構築段階の実装と表示確認はPCのみを対象にする
+- スマートフォンのレスポンシブ調整はユーザーが行う
+- CodexはSP固有の情報順、ナビゲーション、余白、文字サイズ、表示切り替えを追加・確定しない
+- CodexはSP対応を目的とする新規ブレイクポイントやmedia queryを追加しない
 
 ## フォント
 
-- 英語本文・見出しの採用フォントは未確定
-- 日本語版のフォント設定をそのまま流用しない
-- `next/font`、ローカルフォント、Webフォントのどれを使うかはデザインとライセンス確認後に決める
-- 確定したフォント名とfallbackを `src/styles/foundation/` で管理する
+- メインフォントはGoogle SansのRegular（400）とBold（700）を使用する
+- アクセントフォントはEB GaramondのRegular（400）とBold（700）を使用する
+- `next/font/google` で読み込み、CSS Custom Propertiesとして全体に公開する
+- コンポーネント側では `google-sans` / `eb-garamond` mixinを使用する
+- EB Garamondを見出し全体へ一律適用せず、デザイン上のアクセント要素に限定する
 
 ## 画像
 
@@ -66,8 +71,8 @@ foundationの実際のファイル構成は、デザイントークンとフォ�
 
 - デザイントークン
 - フォント
-- ブレイクポイント
-- SPナビゲーション
+- ブレイクポイント（SP調整はユーザー担当）
+- SPナビゲーション（ユーザー担当）
 - 写真スライダーの仕様
 - Headerの固定・表示変化
 - アニメーションと `prefers-reduced-motion` 対応

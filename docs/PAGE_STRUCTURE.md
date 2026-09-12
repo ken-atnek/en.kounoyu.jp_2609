@@ -22,7 +22,7 @@
 
 実装時は上記PCデザインを正とし、文章量、画像比率、余白、セクション順を独自判断で簡略化しません。
 
-SP表示は共通Sass / CSSプレイブックに従って破綻しない構造にしますが、デザイン上の判断が必要な箇所はPCデザインから推測で確定せず、確認事項として残します。
+構築段階の実装対象はPCのみです。スマートフォンのレスポンシブ調整はユーザーが行うため、CodexはPCデザインからSP仕様を推測せず、SP用のレイアウト、余白、文字サイズ、表示切り替え、メニュー仕様、media queryを追加・確定しません。
 
 ## ページ構成
 
@@ -65,7 +65,8 @@ SP表示は共通Sass / CSSプレイブックに従って破綻しない構造�
 - 英語版ロゴまたは施設ロゴ
 - LP内ナビゲーション
 - 予約CTA
-- PC / SPでの表示方式
+- 構築段階はPC表示のみを実装する
+- SPでの表示方式はユーザー調整のためCodexは確定しない
 - スクロール時の固定・背景変化の有無
 
 ### Hero
@@ -168,26 +169,28 @@ Hero内の見出しをページの `h1` とするか、ロゴ表示と別にテ�
 src/app/page.tsx
 
 src/components/common/
+├── ExternalLink.tsx
+├── ScrollLink.tsx
 ├── Header.tsx
 ├── Header.module.scss
 ├── Footer.tsx
 └── Footer.module.scss
 
-src/components/english/
-├── EnglishHero.tsx
-├── EnglishHero.module.scss
-├── EnglishIntroduction.tsx
-├── EnglishIntroduction.module.scss
-├── EnglishRooms.tsx
-├── EnglishRooms.module.scss
-├── EnglishOnsen.tsx
-├── EnglishOnsen.module.scss
-├── EnglishMeals.tsx
-├── EnglishMeals.module.scss
-├── EnglishStay.tsx
-├── EnglishStay.module.scss
-├── EnglishAccess.tsx
-└── EnglishAccess.module.scss
+src/components/top/
+├── TopHero.tsx
+├── TopHero.module.scss
+├── TopIntroduction.tsx
+├── TopIntroduction.module.scss
+├── TopRooms.tsx
+├── TopRooms.module.scss
+├── TopOnsen.tsx
+├── TopOnsen.module.scss
+├── TopMeals.tsx
+├── TopMeals.module.scss
+├── TopStay.tsx
+├── TopStay.module.scss
+├── TopAccess.tsx
+└── TopAccess.module.scss
 ```
 
 コンポーネント名と分割単位は実装開始時に既存構成を確認して確定します。デザイン内の小要素を、最初から細かくComponent化しすぎません。
@@ -212,7 +215,7 @@ src/components/english/
 - 各セクションの確定原稿
 - 画像素材の実ファイルと使用範囲
 - 写真スライダーの有無と操作仕様
-- SPデザインまたはSP時の優先順位
+- SPデザインまたはSP時の優先順位（ユーザー調整のためCodexの構築範囲外）
 - 予約サイトの正式URL
 - Google Mapsと周辺施設のリンク
 - 交通情報、営業時間、料金などの最新情報

@@ -1,0 +1,22 @@
+/* =================================
+ * カラー変数
+ * ------------------------------ */
+
+$normal-off-white: #efeff2;
+$main-normal-black: #1c1c1c;
+$main-sub-black: #3a3a3a;
+$main-light-black: #6b6b6b;
+$main-dark-purple: #4c3f57;
+$pure-white: #fff;
+$pure-black: #000;
+
+/* =================================
+ * カラー定義
+ * ------------------------------ */
+:root {
+    /* base */
+    --color-white-100: #fdfeff;
+
+    /* semantic */
+    --main-white: var(--color-white-100);
+}

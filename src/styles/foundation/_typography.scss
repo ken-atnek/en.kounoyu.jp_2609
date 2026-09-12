@@ -1,0 +1,13 @@
+/* =======================================
+ * こうの湯 英語版 フォント設定
+ * URL: /src/styles/foundation/_typography.scss
+ * Referenced in: /src/styles/foundation/_index.scss
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+@mixin google-sans {
+    font-family: var(--font-google-sans), Arial, sans-serif;
+}
+@mixin eb-garamond {
+    font-family: var(--font-eb-garamond), Georgia, serif;
+}
