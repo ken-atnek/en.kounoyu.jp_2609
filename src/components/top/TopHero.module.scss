@@ -1,0 +1,49 @@
+@use '../../styles/foundation/' as *;
+/* =======================================
+ * こうの湯 英語版 TOP Hero スタイル
+ * URL: /src/components/top/TopHero.module.scss
+ * Referenced in: /src/components/top/TopHero.tsx
+ * Created: 2026-09-12
+ * Last updated: 2026-09-12
+ * ======================================= */
+.topHero {
+    position: relative;
+    isolation: isolate;
+    aspect-ratio: 1366 / 798;
+    overflow: hidden;
+    background-color: $pure-black;
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-color: rgb(0 0 0 / 8%);
+    }
+}
+.mainVisual {
+    z-index: 0;
+    object-fit: cover;
+    object-position: center center;
+}
+.heroLogo {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0 1.4rem;
+    width: fit-content;
+    svg {
+        fill: $pure-white;
+    }
+    .logoMark {
+        width: 18.5rem;
+        aspect-ratio: 176 / 76;
+    }
+    .logoName {
+        width: 13.3rem;
+        aspect-ratio: 126 / 50;
+        margin-top: 2rem;
+    }
+}
