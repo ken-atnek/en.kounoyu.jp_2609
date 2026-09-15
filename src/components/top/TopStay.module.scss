@@ -9,6 +9,9 @@
 .topStay {
     padding-bottom: 12rem;
     color: $main-sub-black;
+    @include sp {
+        padding-bottom: 12vw;
+    }
     .sectionHeader {
         @include section-header;
         .sectionTitle {
@@ -22,6 +25,11 @@
         width: min(104rem, calc(100% - 4rem));
         margin: 7.2rem auto 0;
         font-size: inherit;
+        @include sp {
+            width: 100%;
+            padding-inline: 4vw;
+            margin-top: 8vw;
+        }
         h3 {
             @include eb-garamond;
             font-size: fz(32);
@@ -41,11 +49,21 @@
         font-size: fz(24);
         line-height: 1.4;
         text-align: center;
+        @include sp {
+            margin: 8vw auto 8vw;
+            max-width: 80vw;
+        }
     }
     .stayGuide {
         width: min(112rem, calc(100% - 4rem));
         margin: 7.2rem auto 11.2rem;
         font-size: inherit;
+        @include sp {
+            width: 100%;
+            padding-inline: 4vw;
+            margin-top: 12vw;
+            margin-bottom: 12vw;
+        }
         .stayGuideTitle {
             display: flex;
             align-items: center;
@@ -71,6 +89,11 @@
             gap: 0 4.8rem;
             margin-top: 4.8rem;
             font-size: inherit;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 10vw 0;
+            }
             .stayGuideItem {
                 min-width: 0;
                 font-size: inherit;
@@ -78,6 +101,9 @@
                 display: grid;
                 grid-template-rows: subgrid;
                 gap: 3.2rem 0;
+                @include sp {
+                    gap: 4vw 0;
+                }
                 .stayGuideHeading {
                     font-size: inherit;
                     h4 {
@@ -85,6 +111,9 @@
                         font-size: fz(26);
                         font-weight: 400;
                         line-height: 1.2;
+                        @include sp {
+                            font-size: fz(32);
+                        }
                     }
                 }
                 > img {
@@ -111,6 +140,10 @@
         width: min(112rem, calc(100% - 4rem));
         margin: 0 auto;
         font-size: inherit;
+        @include sp {
+            width: 100%;
+            padding-inline: 4vw;
+        }
         > h3 {
             display: flex;
             align-items: center;
@@ -131,12 +164,20 @@
             gap: 6rem 0;
             margin-top: 3.2rem;
             font-size: inherit;
+            @include sp {
+                gap: 8vw 0;
+            }
             .nearbyItem {
                 display: grid;
                 grid-template-columns: 42.6rem minmax(0, 1fr);
                 gap: 0 4.8rem;
                 align-items: start;
                 font-size: inherit;
+                @include sp {
+                    grid-template-columns: unset;
+                    grid-auto-flow: row;
+                    gap: 4vw 0;
+                }
                 > img {
                     display: block;
                     width: 100%;

@@ -59,7 +59,8 @@
 - 共通構成はSass / CSSプレイブックの `workflow.md` を参照する
 - 構築段階の実装対象はPCのみとする
 - スマートフォンのレスポンシブ調整はユーザーが行い、CodexはSP用スタイルやmedia queryを追加しない
-- メインフォントはGoogle Sans 400 / 700、アクセントはEB Garamond 400 / 700を `next/font/google` で読み込む
+- メインフォントはGoogle Sans 400 / 700を `public/fonts/` から `next/font/local` で読み込む
+- アクセントはEB Garamond 400 / 700を `next/font/google` で読み込む
 - 日本語版の `src/styles/foundation/` を英語版の実装ベースとしてコピー済み
 - foundationにはsettings、typography、colors、breakpoints、interaction、svg、ui、resetを配置する
 - `_index.scss` はreset以外の変数、function、mixinをまとめてforwardする

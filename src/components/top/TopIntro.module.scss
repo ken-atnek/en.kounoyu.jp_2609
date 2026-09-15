@@ -13,6 +13,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sp {
+        padding: 10vw 4vw;
+    }
     article {
         max-width: 1119px;
         display: flex;
@@ -23,11 +26,18 @@
             font-weight: 400;
             line-height: 1;
             text-align: center;
+            @include sp {
+                font-size: fz(34);
+            }
         }
         .video {
             width: min(92.4rem, 100%);
             aspect-ratio: 16 / 9;
             margin: 4.8rem auto 0;
+            @include sp {
+                width: 88vw;
+                margin: 10vw auto 0;
+            }
             iframe {
                 display: block;
                 width: 100%;
@@ -40,6 +50,10 @@
             margin: 4.7rem auto 0;
             font-size: fz(16);
             line-height: 1.6;
+            @include sp {
+                width: 100%;
+                margin: 8vw auto 0;
+            }
         }
         ul {
             display: grid;
@@ -49,6 +63,14 @@
             font-size: inherit;
             grid-template-rows: auto auto 1fr;
             min-height: 24rem;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                width: 100%;
+                gap: 4vw 0;
+                min-height: unset;
+                margin-top: 8vw;
+            }
             li {
                 padding: 2.4rem;
                 color: $main-sub-black;
@@ -59,6 +81,9 @@
                 display: grid;
                 grid-template-rows: subgrid;
                 gap: 1.2rem;
+                @include sp {
+                    padding: 4vw;
+                }
                 .featureLabel {
                     color: $main-light-black;
                     font-size: fz(14);
@@ -81,6 +106,10 @@
             width: min(98.5rem, 100%);
             margin: 6.4rem auto 0;
             font-size: inherit;
+            @include sp {
+                width: 100%;
+                margin-top: 8vw;
+            }
             h3 {
                 @include eb-garamond;
                 font-size: fz(30);
@@ -93,10 +122,19 @@
                 gap: 2.4rem;
                 margin-top: 3.2rem;
                 font-size: inherit;
+                @include sp {
+                    grid-template-columns: unset;
+                    gap: 0;
+                }
                 dl {
                     margin: 0;
                     border-top: 1px solid #cbcbcb;
                     font-size: inherit;
+                    @include sp {
+                        &:last-of-type {
+                            border-top: unset;
+                        }
+                    }
                     .informationRow {
                         display: flex;
                         align-items: center;

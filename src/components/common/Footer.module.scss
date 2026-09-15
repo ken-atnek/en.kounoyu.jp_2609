@@ -13,16 +13,26 @@
     padding: 7.2rem 7.2rem 3.2rem;
     color: $pure-white;
     background-color: $main-normal-black;
+    @include sp {
+        padding: 8vw 4vw 12vw;
+    }
     .footerMain {
         display: flex;
         justify-content: space-between;
         align-items: start;
         gap: 0 5.2rem;
         font-size: inherit;
+        @include sp {
+            flex-direction: column;
+            align-items: center;
+        }
         .ryokanDetails {
             font-size: inherit;
             display: flex;
             flex-direction: column;
+            @include sp {
+                align-items: center;
+            }
             .logo {
                 display: flex;
                 align-items: center;
@@ -56,6 +66,19 @@
                 font-size: fz(14);
                 font-style: normal;
                 line-height: 1.7;
+                @include sp {
+                    max-width: 22em;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    .tel {
+                        border: 1px solid;
+                        align-self: center;
+                        padding: 0.3em 2em;
+                        border-radius: 100vmax;
+                        margin-top: 2vw;
+                    }
+                }
                 p,
                 a {
                     color: inherit;
@@ -92,6 +115,9 @@
             padding-top: 0.8rem;
             font-size: inherit;
             margin-left: auto;
+            @include sp {
+                display: none;
+            }
             a {
                 color: inherit;
                 font-size: fz(14);
@@ -112,6 +138,9 @@
             flex-direction: column;
             font-size: inherit;
             gap: 0.6rem 0;
+            @include sp {
+                margin-top: 6vw;
+            }
             .sisterLabel {
                 font-size: fz(12);
                 line-height: 1;
@@ -171,6 +200,11 @@
         justify-content: space-between;
         margin-top: auto;
         font-size: inherit;
+        @include sp {
+            align-self: flex-end;
+            padding-right: 16vw;
+            margin-top: 4vw;
+        }
         small {
             color: #6b6b6b;
             font-size: fz(12);
@@ -187,6 +221,7 @@
             border-radius: 50%;
             background-color: $pure-white;
             transition: opacity 0.2s ease-out;
+            z-index: 10;
             &::after {
                 @include svg-arrow-slide('1C1C1C');
                 content: '';

@@ -43,7 +43,7 @@ export default function Footer() {
           </ScrollLink>
           <address className={styles.address}>
             <p>6784 Manganji, Minamioguni, Aso, Kumamoto 869-2402, Japan</p>
-            <p>
+            <p className={styles.tel}>
               Telephone . <a href="tel:+81967488700">+81-967-48-8700</a>
             </p>
           </address>

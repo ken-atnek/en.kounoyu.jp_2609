@@ -49,7 +49,9 @@ foundationの実際のファイル構成は、デザイントークンとフォ�
 
 - メインフォントはGoogle SansのRegular（400）とBold（700）を使用する
 - アクセントフォントはEB GaramondのRegular（400）とBold（700）を使用する
-- `next/font/google` で読み込み、CSS Custom Propertiesとして全体に公開する
+- Google Sansは `public/fonts/` のWOFF2を `next/font/local` で読み込む
+- EB Garamondは `next/font/google` で読み込む
+- 両フォントともCSS Custom Propertiesとして全体に公開する
 - コンポーネント側では `google-sans` / `eb-garamond` mixinを使用する
 - EB Garamondを見出し全体へ一律適用せず、デザイン上のアクセント要素に限定する
 

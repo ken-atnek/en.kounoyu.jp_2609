@@ -4,11 +4,14 @@
  * URL: /src/components/top/TopMeals.module.scss
  * Referenced in: /src/components/top/TopMeals.tsx
  * Created: 2026-09-12
- * Last updated: 2026-09-12
+ * Last updated: 2026-09-14
  * ======================================= */
 .topMeals {
     padding-bottom: 12rem;
     color: $main-sub-black;
+    @include sp {
+        padding-bottom: 12vw;
+    }
     .sectionHeader {
         @include section-header;
     }
@@ -19,6 +22,10 @@
         font-size: fz(24);
         line-height: 1.6;
         text-align: center;
+        @include sp {
+            margin: 8vw auto 8vw;
+            max-width: 80vw;
+        }
     }
     .mealList {
         display: flex;
@@ -27,11 +34,19 @@
         width: min(112rem, calc(100% - 4rem));
         margin: 0 auto;
         font-size: inherit;
+        @include sp {
+            gap: 12vw 0;
+            width: 100%;
+            padding-inline: 4vw;
+        }
         article {
             display: grid;
             gap: 4.8rem;
             align-items: start;
             font-size: inherit;
+            @include sp {
+                gap: 4vw 0;
+            }
             > img,
             .drinkItem img,
             .restaurantImages img {
@@ -46,6 +61,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: 3.2rem 0;
+                @include sp {
+                    display: contents;
+                }
                 h3 {
                     @include eb-garamond;
                     font-size: fz(32);
@@ -60,31 +78,63 @@
                 .drinkDetail p {
                     font-size: fz(16);
                     line-height: 1.6;
+                    @include sp {
+                        order: 1;
+                        margin-top: 2vw;
+                    }
                 }
             }
         }
         .dinner {
             grid-template-columns: 32rem minmax(0, 1fr);
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                padding-right: 6vw;
+            }
         }
         .breakfast,
         .restaurant {
             grid-template-columns: minmax(0, 1fr) 32rem;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+            }
+        }
+        .breakfast {
+            @include sp {
+                padding-left: 8vw;
+                img {
+                    order: 1;
+                }
+            }
         }
         .drinks {
             grid-template-columns: 1fr;
             gap: 1rem 2rem;
+            @include sp {
+                gap: 8vw 0;
+            }
             .drinkItem {
                 display: grid;
                 grid-template-columns: 32rem minmax(0, 1fr);
                 gap: 4.8rem;
                 align-items: start;
                 font-size: inherit;
+                @include sp {
+                    grid-template-columns: unset;
+                    grid-auto-flow: row;
+                    gap: 4vw 0;
+                }
                 .drinkDetail {
                     display: flex;
                     flex-direction: column;
                     gap: 3.2rem;
                     font-size: inherit;
                     padding-top: 2rem;
+                    @include sp {
+                        display: contents;
+                    }
                     h3 {
                         @include eb-garamond;
                         font-size: fz(32);
@@ -98,6 +148,9 @@
                     p {
                         font-size: fz(16);
                         line-height: 1.6;
+                        @include sp {
+                            order: 1;
+                        }
                     }
                 }
                 img {
@@ -107,16 +160,38 @@
             }
         }
         .restaurant {
+            @include sp {
+                padding-left: 8vw;
+            }
             .restaurantImages {
                 min-width: 0;
                 font-size: inherit;
                 display: flex;
                 flex-direction: column;
                 gap: 1rem 0;
+                @include sp {
+                    order: 1;
+                    gap: 8vw 0;
+                }
                 img {
                     aspect-ratio: 752/400;
                     object-fit: cover;
                     object-position: center bottom;
+                }
+                .restaurantImage {
+                    margin: 0;
+                    font-size: inherit;
+                    figcaption {
+                        display: none;
+                        @include sp {
+                            @include eb-garamond;
+                            display: block;
+                            margin-bottom: 4vw;
+                            font-size: fz(28);
+                            line-height: 1;
+                            color: $main-sub-black;
+                        }
+                    }
                 }
             }
             .textColumn {
@@ -126,6 +201,9 @@
                     flex-direction: column;
                     gap: 3.2rem;
                     font-size: inherit;
+                    @include sp {
+                        display: none;
+                    }
                     p {
                         margin: 0;
                         font-size: fz(24);

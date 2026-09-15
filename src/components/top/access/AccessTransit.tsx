@@ -3,16 +3,11 @@
  * URL: /src/components/top/access/AccessTransit.tsx
  * Referenced in: /src/components/top/TopAccess.tsx
  * Created: 2026-09-12
- * Last updated: 2026-09-12
+ * Last updated: 2026-09-14
  * ======================================= */
 
 import { accessTransitLinks } from '@/data/top-access';
-import {
-  cx,
-  Destination,
-  RouteNote,
-  TransitLink,
-} from './AccessRouteParts';
+import { cx, Destination, RouteNote, TransitLink } from './AccessRouteParts';
 import styles from '../TopAccess.module.scss';
 
 export default function AccessTransit() {
@@ -34,7 +29,9 @@ export default function AccessTransit() {
               <span>Kumamoto Station</span>
             </div>
             <div className={styles.boxArrow01}>
-              <i />
+              <i className={styles.kumamotoAirportArrow}>
+                <p>Approx. 1 hour</p>
+              </i>
               <i>
                 <div className={styles.number}>2</div>
                 <p>
@@ -78,8 +75,8 @@ export default function AccessTransit() {
             </div>
           </div>
           <RouteNote>
-            For detailed information, including timetables and fares, please
-            use the relevant links below.
+            For detailed information, including timetables and fares, please use
+            the relevant links below.
           </RouteNote>
           <nav
             className={styles.transitLinks}
@@ -98,10 +95,7 @@ export default function AccessTransit() {
               JR Kyushu Hohi Main Line Timetable: Kumamoto Station toward
               Higo-Ozu
             </TransitLink>
-            <TransitLink
-              numbers={['3']}
-              href={accessTransitLinks.yamabikoBus}
-            >
+            <TransitLink numbers={['3']} href={accessTransitLinks.yamabikoBus}>
               Kumamoto-Oita Yamabiko Express Bus
             </TransitLink>
             <TransitLink
@@ -112,8 +106,8 @@ export default function AccessTransit() {
             </TransitLink>
           </nav>
           <p className={styles.notice}>
-            *1 Please take a taxi or arrange a shuttle with your ryokan.
-            Contact the ryokan in advance to confirm shuttle availability.
+            *1 Please take a taxi or arrange a shuttle with your ryokan. Contact
+            the ryokan in advance to confirm shuttle availability.
           </p>
         </article>
         <article className={styles.routeGroup}>
@@ -155,14 +149,14 @@ export default function AccessTransit() {
             </div>
           </div>
           <RouteNote>
-            For detailed information, including timetables and fares, please
-            use the relevant links below.
+            For detailed information, including timetables and fares, please use
+            the relevant links below.
           </RouteNote>
-          <nav
-            className={styles.transitLinks}
-            aria-label="Fukuoka route links"
-          >
-            <TransitLink numbers={['1']} href={accessTransitLinks.kokuraStation}>
+          <nav className={styles.transitLinks} aria-label="Fukuoka route links">
+            <TransitLink
+              numbers={['1']}
+              href={accessTransitLinks.kokuraStation}
+            >
               Kokura Station Information
             </TransitLink>
             <TransitLink
@@ -227,8 +221,8 @@ export default function AccessTransit() {
             </div>
           </div>
           <RouteNote>
-            For detailed information, including timetables and fares, please
-            use the relevant links below.
+            For detailed information, including timetables and fares, please use
+            the relevant links below.
           </RouteNote>
           <nav className={styles.transitLinks} aria-label="Oita route links">
             <TransitLink
@@ -292,8 +286,8 @@ export default function AccessTransit() {
             </div>
           </div>
           <RouteNote>
-            For detailed information, including timetables and fares, please
-            use the relevant links below.
+            For detailed information, including timetables and fares, please use
+            the relevant links below.
           </RouteNote>
           <nav
             className={styles.transitLinks}
@@ -344,8 +338,8 @@ export default function AccessTransit() {
             <Destination />
           </div>
           <RouteNote>
-            For detailed information, including timetables and fares, please
-            use the relevant links below.
+            For detailed information, including timetables and fares, please use
+            the relevant links below.
           </RouteNote>
           <nav
             className={styles.transitLinks}

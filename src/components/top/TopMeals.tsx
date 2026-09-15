@@ -3,7 +3,7 @@
  * URL: /src/components/top/TopMeals.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-09-12
- * Last updated: 2026-09-12
+ * Last updated: 2026-09-14
  * ======================================= */
 
 import { Fragment } from 'react';
@@ -100,15 +100,17 @@ export default function TopMeals() {
         </article>
         <article className={styles.restaurant}>
           <div className={styles.restaurantImages}>
-            {restaurant.images.map((image) => (
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={1366}
-                height={917}
-                sizes="646px"
-                key={image.src}
-              />
+            {restaurant.images.map((image, index) => (
+              <figure className={styles.restaurantImage} key={image.src}>
+                <figcaption>{restaurant.names[index]}</figcaption>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={1366}
+                  height={917}
+                  sizes="646px"
+                />
+              </figure>
             ))}
           </div>
           <div className={styles.textColumn}>

@@ -9,15 +9,24 @@
 .topWelcomeSlider {
     overflow: hidden;
     padding: 12rem 0 11rem;
+    @include sp {
+        padding: 10vw 0;
+    }
     h2 {
         @include eb-garamond;
         font-size: fz(28);
         font-weight: 400;
         text-align: center;
+        @include sp {
+            font-size: fz(30);
+        }
     }
     /* stylelint-disable selector-pseudo-class-no-unknown, selector-class-pattern */
     :global(.splide) {
         margin-top: 5.8rem;
+        @include sp {
+            margin-top: 8vw;
+        }
     }
     :global(.splide__track) {
         overflow: hidden;
@@ -28,6 +37,9 @@
         right: 12.4rem;
         display: flex;
         gap: 0 1.2rem;
+        @include sp {
+            display: none;
+        }
     }
     button:global(.splide__arrow) {
         position: relative;

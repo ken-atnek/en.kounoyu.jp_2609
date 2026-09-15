@@ -44,6 +44,9 @@
     aspect-ratio: 1366 / 480;
     overflow: hidden;
     font-size: inherit;
+    @include sp {
+        aspect-ratio: 393/138;
+    }
     &::after {
         content: '';
         position: absolute;
@@ -66,11 +69,17 @@
         margin: 0;
         color: $pure-white;
         gap: 1.6rem 0;
+        @include sp {
+            gap: 2vw 0;
+        }
         h2 {
             @include eb-garamond;
             font-size: fz(56);
             font-weight: 400;
             line-height: 1;
+            @include sp {
+                font-size: fz(48);
+            }
         }
         p {
             @include eb-garamond;
